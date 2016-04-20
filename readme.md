@@ -1,4 +1,4 @@
- #Static content
+#Static content
 
 This is our working directory of static content we've built for the Gazette.
 
