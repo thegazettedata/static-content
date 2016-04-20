@@ -1,6 +1,6 @@
 #Static content
 
-This is our working directory of static content we've built for the Gazette.
+This is our working directory of random static content we've built for the Gazette.
 
 ##Installation
 First you need to make sure a few things are installed on your computer. If you are using a Mac, do the following:
