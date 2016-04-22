@@ -5,13 +5,13 @@ module.exports = function (grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     // Our parameters, which are set when grunt command is ran
-    // Bar chart, line chart, etc
+    // Timeline, etc.
     var template = grunt.option('template');
     // Name of project folder
     var folder = grunt.option('folder');
 
     // Output final URL on command line
-    grunt.log.write('URL: http://files.gazlab.com/content-host/d3charts/projects/' + folder + '/index.html' );
+    grunt.log.write('URL: http://files.gazlab.com/content-host/static-content/projects/' + folder + '/index.html' );
 
     // Initialize grunt
     grunt.initConfig({
@@ -30,7 +30,7 @@ module.exports = function (grunt) {
                     // Copy template specific directory
                     {
                         expand: true,
-                        cwd: 'templates/' + template + '_chart',
+                        cwd: 'templates/' + template,
                         src: '**',
                         dest: 'projects/' + folder
                     }
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
                     authKey: 'smgKey'
                 },
                 src: 'projects/' + folder,
-                dest: '/d3charts/projects/' + folder,
+                dest: '/static-content/projects/' + folder,
                 serverSep: '/'
             }
         }

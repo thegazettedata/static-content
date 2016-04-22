@@ -32,9 +32,13 @@ Dependencies for Grunt are put into package.json. If any new dependencies are pu
 
 Then to create a new project, run: 
 
-	grunt new --folder=name_of_folder_here --template=bar 
+	grunt new --folder=name_of_folder_here --template=timeline
 
 The "folder" parameter is equal to the name of the new folder you want to create. All new projects get put into the "projects" folder.
+
+The "template" parameter represents the type of content you want to create. We have one option right now:
+
+* timeline
 
 ##Delete project
 To delete a folder out of the projects folder, run:
@@ -46,7 +50,7 @@ BE CAREFUL when running this command. To run the task without actually deleting 
 More inforomation can be found [here](https://github.com/gruntjs/grunt-contrib-clean#no-write).
 
 ##Deploy to FTP server
-When you are done with your chart, you can deploy it to our FTP server with one command.
+When you are done with your content, you can deploy it to our FTP server with one command.
 
 	grunt deploy --folder=name_of_project_here
 
@@ -75,17 +79,17 @@ Finally, push all the changes on your local machine to Github:
 
 	git push
 
-Before pushing to Github, make sure to add a link to the chart in [urls.md](https://github.com/GazetteKCRGdata/d3charts/blob/master/urls.md)
+Before pushing to Github, make sure to add a link to the content in [urls.md](https://github.com/GazetteKCRGdata/d3contents/blob/master/urls.md)
 	
-##Iframing charts into stories
+##Iframing contents into stories
 
-We at The Gazette use [pym.js](https://github.com/nprapps/pym.js/) to iframe the charts into articles and make them responsive. Here's an example of a chart embed:
+We at The Gazette use [pym.js](https://github.com/nprapps/pym.js/) to iframe the contents into articles and make them responsive. Here's an example of a content embed:
 
 ```html
 <div class="center">
 <h3>Static content headline</h3>
 <div id="cr-bike-trails"></div>
-<script type="text/javascript">var pymParent = new pym.Parent('cr-bike-trails','http://files.gazlab.com/content-host/d3charts/projects/cr-bike-trails/index.html', {});</script>
+<script type="text/javascript">var pymParent = new pym.Parent('cr-bike-trails','http://files.gazlab.com/content-host/d3contents/projects/cr-bike-trails/index.html', {});</script>
 <p class="embed-subhead">* Information text on the static content goes here.</p>
 </div>
 ```

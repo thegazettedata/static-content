@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Supply chain timeline | The Gazette</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+		<link rel="shortcut icon" href="imgs/glogo.png" />
+
+		<!-- Mobile meta tags-->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta http-equiv="cleartype" content="on">
+		<link rel="apple-touch-icon" href="imgs/glogo.png"/>
+
+		<!-- Social meta tags-->
+		<meta property="og:type" content="article"/>
+		<meta property="og:site_name" content="The Gazette"/>
+		<meta property="twitter:site" content="@gazettedotcom">
+		<meta property="twitter:image" content="imgs/glogo.png">
+
+		<!-- INCLUDES -->
+		<!-- Base styles: Libraries -->
+		<link rel="stylesheet" href="css/lib/bootstrap-2.3.2.min.css" />
+		<link rel="stylesheet" href="css/lib/bootstrap-responsive-2.3.2.min.css" />
+		<link rel="stylesheet" href="css/lib/font-awesome-4.2.0.min.css" />
+
+		<!-- Base, custom styles -->
+		<link rel="stylesheet" href="css/hide-show-media-queries.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Load Spin.js -->
+		<script src="js/lib/spin-2.0.1.min.js"></script>
+	</head>
+	<body>
+		<div id="content">
+			<table id="timeline-container">
+				<tr></tr>
+			</table>
+
+			<!-- <p id="credits">Mine cart icon by Creative Stall. Steel icon by Pedro Martínez. Factory icon by Krisada. Tractor icon by Bernar  Novalyi. All icons from the <a href="https://thenounproject.com/" target="_blank">Noun Project</a>.</p> -->
+
+			<!--
+				Taxonomy News, News > Business, Placement > Gazette > Front Rotator
+				Profiles: Business, Front Rotator, News (Priority 1)
+			-->
+		</div>
+
+		<!-- Spin.js -->
+		<script>
+		var opts = {
+			lines: 13, // The number of lines to draw
+			length: 20, // The length of each line
+			width: 10, // The line thickness
+			radius: 30, // The radius of the inner circle
+			corners: 1, // Corner roundness (0..1)
+			rotate: 0, // The rotation offset
+			direction: 1, // 1: clockwise, -1: counterclockwise
+			color: '#000', // #rgb or #rrggbb or array of colors
+			speed: 1, // Rounds per second
+			trail: 60, // Afterglow percentage
+			shadow: false, // Whether to render a shadow
+			hwaccel: false, // Whether to use hardware acceleration
+			className: 'spinner', // The CSS class to assign to the spinner
+			zIndex: 2e9, // The z-index (defaults to 2000000000)
+			top: '200px', // Top position relative to parent
+			left: '50%' // Left position relative to parent
+		};
+		var target = document.getElementById('content');
+		var spinner = new Spinner(opts);
+		spinner.spin(target);
+		</script>
+	
+		<!-- JS: Libraries -->
+		<script src="js/lib/jquery-1.11.1.min.js"></script>
+		<script src="js/lib/underscore-1.8.3.min.js"></script>
+		<script src="js/lib/handlebars-4.0.5.min.js"></script>
+		<script src="js/lib/pym.min.js"></script>
+
+		<!-- Templates -->
+    <script id="timeline-template" type="text/x-handlebars-template">
+			{{#if 'left'}}
+				<td id="left-td-text" class="td-text">
+					{{#each this}}
+						{{#if @index}}
+							<span class="headline-text headline-text-{{@index}}">
+								{{link_begin link}}
+									<h3>
+										{{headline}}
+										<span class="bar background-color"></span>
+									</h3>
+									<p>{{text}}</p>
+								{{link_end link}}
+							</span>
+						{{/if}}
+					{{/each}}
+				</td>
+			{{/if}}
+
+			<td id="{{td_id}}" class="circle-td">
+				<div class="timeline-bar background-color"></div>
+				<div class="timeline-bar grey-color"></div>
+
+				{{#each this}}
+	    		<span class="link-container link-container-{{@index}}">
+		    		{{link_begin link}}
+		    			<div class="timeline-circle-outer circle-outer-{{@index}}">
+								<div class="timeline-circle circle-{{@index}} button">
+									<div class="text background-color color-{{@index}} button">
+										{{chapter_icon chapter icon}}
+									</div>
+								</div>
+							</div>
+						{{link_end link}}
+					</span>
+				{{/each}}
+			</td>
+
+			{{#if 'right'}}
+				<td id="right-td-text" class="td-text">
+					{{#each this}}
+						{{#if @index}}
+							<span class="headline-text headline-text-{{@index}}">
+								{{link_begin link}}
+									<h3>
+										{{headline}}
+										<span class="bar background-color"></span>
+									</h3>
+									<p>{{text}}</p>
+								{{link_end link}}
+							</span>
+						{{/if}}
+					{{/each}}
+				</td>
+			{{/if}}
+    </script>
+		
+		<!-- Base, custom JS -->
+		<script src="json/data.json"></script>
+		<script src="js/base.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>

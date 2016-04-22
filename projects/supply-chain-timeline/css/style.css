@@ -1,0 +1,297 @@
+#timeline-container {
+	margin: 0 auto;
+	width: 500px;
+}
+
+#timeline-container td {
+	vertical-align: top;
+}
+
+.circle-td a {
+	color: #FFF;
+}
+
+.circle-td a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+#timeline-container #right-td {
+	padding-top: 0px;
+}
+
+.timeline-bar {
+	margin: 0 auto;
+	width: 20px;
+	height: 600px;
+	margin-bottom: -601px;
+	z-index: 1;
+	top: 0px;
+}
+
+.timeline-bar.grey-color {
+	/*height: 450px;
+	margin-top: 201px;*/
+}
+
+.timeline-circle-outer {
+	border: 5px solid #FFF;
+	border-radius: 70px;
+	margin-bottom: 100px;
+}
+
+.timeline-circle {
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	border-radius: 60px;
+	border: 5px solid #E67E22;
+	z-index: 2;
+	overflow: hidden;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+	top: 0;
+}
+
+.timeline-circle .text {
+	border: 2px solid #FFF;
+	width: 56px;
+	height: 56px;
+	line-height: 46px;
+	border-radius: 56px;
+	text-align: center;
+	font-size: 40px;
+	font-family: Georgia;
+	font-weight: bold;
+	color: #FFF;
+}
+
+.timeline-circle .text svg {
+	width: 70%;
+	margin-top: 12%;
+}
+
+.circle-1 .text svg {
+	margin-top: 13%;
+}
+
+.circle-2 .text svg {
+	width: 60%;
+	margin-top: 16%;
+}
+
+.circle-3 .text svg {
+	width: 85%;
+	margin-top: 5%;
+}
+
+.timeline-circle.active {
+	border: 5px solid #a85913;
+}
+
+.timeline-circle.active .text {
+	background-color: #a85913;
+}
+
+.color-1,
+.color-2,
+.color-3,
+.headline-text-1 .bar,
+.headline-text-2 .bar,
+.headline-text-3 .bar {
+	background-color: #999;
+	cursor: default;
+}
+
+.circle-1,
+.circle-2,
+.circle-3 {
+	border: 5px solid #999;
+	cursor: default;
+}
+
+.headline-text {
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
+
+.headline-text h3 {
+	font-family: Georgia;
+	font-size: 19px;
+	line-height: 23px;
+	color: #777;
+	margin-top: 0px;
+}
+
+.headline-text h3 .bar {
+	width: 15px;
+	height: 3px;
+	top: 30px;
+	position: absolute;
+	right: -23px;
+}
+
+.headline-text-1 h3 .bar,
+.headline-text-3 h3 .bar {
+	left: -22px;
+}
+
+.headline-text p {
+	color: #888;
+	font-size: 13px;
+	line-height: 17px;
+}
+
+.td-text h3, .td-text p {
+	opacity: 0.8;
+	position: relative;
+	margin-right: 20px;
+}
+
+.td-text a:hover, .td-text a:active {
+	text-decoration: none;
+}
+
+.td-text a h3, .td-text a p {
+	opacity: 1;
+}
+
+.td-text a h3 {
+	color: #333;
+}
+
+.td-text a h3:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+.td-text a p {
+	color: #555;
+}
+
+#timeline-container #right-td-text,
+#timeline-container #left-td-text {
+	position: relative;
+	width: 165px;
+}
+
+#timeline-container #left-td-text {
+	text-align: right;
+}
+
+#right-td-text .headline-text {
+	margin-left: 20px;
+}
+
+#left-td-text .headline-text-0 {
+	top: 10px;
+}
+
+#right-td-text .headline-text-1 {
+	top: 186px;
+}
+
+#left-td-text .headline-text-2 {
+	top: 366px;
+}
+
+#right-td-text .headline-text-3 {
+	top: 547px;
+}
+
+#credits {
+	color: #999;
+	font-size: 11px;
+	line-height: 16px;
+	margin: 0 15px;
+}
+
+
+@media(max-width:500px) {
+	#timeline-container {
+		width: 100%;
+	}
+}
+
+@media(max-width:475px) {
+	#timeline-container #right-td-text,
+	#timeline-container #left-td-text {
+		width: 121px;
+	}
+
+	#right-td-text .headline-text {
+		margin-left: 0px;
+	}
+
+	#right-td-text .headline-text-1 {
+		top: 165px;
+	}
+
+	#left-td-text .headline-text-2 {
+		top: 330px;
+	}
+
+	#right-td-text .headline-text-3 {
+		top: 490px;
+	}
+
+	.td-text h3 {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
+	.td-text h3, .td-text p {
+		text-align: left;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	
+	.headline-text h3 .bar {
+		display: none;
+	}
+
+	.timeline-bar {
+		width: 10px;
+		height: 500px;
+		margin-bottom: -501px;
+	}
+
+	.timeline-circle-outer {
+		border-radius: 50px;
+	}
+
+	.timeline-circle {
+		width: 40px;
+    	height: 40px;
+    	line-height: 40px;
+    	border-radius: 40px;
+	}
+
+	.timeline-circle .text {
+		width: 36px;
+    	height: 36px;
+    	line-height: 30px;
+    	border-radius: 36px;
+    	text-align: center;
+    	font-size: 25px;
+	}
+
+	.timeline-circle .text svg {
+		width: 65%;
+		margin-top: 18%;
+	}
+}
+
+@media(max-width:350px) {
+	.td-text h3 {
+		font-size: 12px;
+		line-height: 16px;
+		margin-bottom: 3px;
+	}
+
+	.td-text p {
+		font-size: 11px;
+		line-height: 15px;
+	}
+}
