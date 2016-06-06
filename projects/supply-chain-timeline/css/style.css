@@ -15,6 +15,11 @@
 	color: #FFF;
 	text-decoration: none;
 }
+
+.hash a:hover {
+	cursor: default !important;
+}
+
 #timeline-container #right-td {
 	padding-top: 0px;
 }
@@ -29,8 +34,9 @@
 }
 
 .timeline-bar.grey-color {
-	/*height: 450px;
-	margin-top: 201px;*/
+	height: 0px;
+	margin-top: 0px;
+	display: none;
 }
 
 .timeline-circle-outer {
@@ -53,6 +59,14 @@
 	top: 0;
 }
 
+.hash .timeline-circle {
+	border: 5px solid #a85913 !important;
+}
+
+.hash .timeline-circle:hover {
+	cursor: default !important;
+}
+
 .timeline-circle .text {
 	border: 2px solid #FFF;
 	width: 56px;
@@ -64,6 +78,14 @@
 	font-family: Georgia;
 	font-weight: bold;
 	color: #FFF;
+}
+
+.hash .timeline-circle .text {
+	background-color: #a85913 !important;
+}
+
+.hash .timeline-circle .text:hover {
+	cursor: default !important;
 }
 
 .timeline-circle .text svg {
@@ -93,23 +115,6 @@
 	background-color: #a85913;
 }
 
-.color-1,
-.color-2,
-.color-3,
-.headline-text-1 .bar,
-.headline-text-2 .bar,
-.headline-text-3 .bar {
-	background-color: #999;
-	cursor: default;
-}
-
-.circle-1,
-.circle-2,
-.circle-3 {
-	border: 5px solid #999;
-	cursor: default;
-}
-
 .headline-text {
 	position: absolute;
 	left: 0;
@@ -124,12 +129,33 @@
 	margin-top: 0px;
 }
 
+.headline-text h3 .hash-headline {
+	font-size: 12px;
+	line-height: 18px;
+    font-family: Helvetica;
+    color: #a85913;
+}
+
 .headline-text h3 .bar {
 	width: 15px;
 	height: 3px;
 	top: 30px;
 	position: absolute;
 	right: -23px;
+}
+
+.hash.headline-text h3 {
+	color: #000 !important;
+}
+
+.hash.headline-text h3:hover,
+.hash.headline-text a:hover {
+	cursor: default !important;
+	text-decoration: none !important;
+}
+
+.hash.headline-text h3 .bar {
+	background-color: #a85913 !important;
 }
 
 .headline-text-1 h3 .bar,
@@ -149,7 +175,7 @@
 	margin-right: 20px;
 }
 
-.td-text a:hover, .td-text a:active {
+.td-text a:hover, .td-text a:active, .td-text a:focus {
 	text-decoration: none;
 }
 

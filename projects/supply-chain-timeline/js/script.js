@@ -13,6 +13,29 @@ var templatesInfo = [
 	}
 ]
 
+// Sets styles for story we're currently on
+function hashAction() {
+	var hash_num = window.location.hash.replace('#','');
+
+	$('.link-container-' + hash_num).addClass('hash');
+	$('.headline-text-' + hash_num).addClass('hash');
+
+	var text = '<div class="hash-headline">Currently reading:</div>';
+	$('.headline-text-' + hash_num + ' h3').prepend(text);
+
+	$('a').click(function(e) {
+		var target = $(e.target);
+
+		var hash_link = $(target).parents('.link-container').hasClass('hash');
+		var hash_headline = $(target).parents('.headline-text').hasClass('hash');
+
+		if (hash_link || hash_headline) {
+			e.preventDefault();
+		}
+	})
+// Close hash action
+}
+
 // All the page's events
 function timelineEvents() {
 	var timeline_circle_text = $('.timeline-circle .text');
@@ -47,18 +70,18 @@ function timelineEvents() {
 		var class_name = $(e.target).parents('.headline-text').classList()[1];
 		var story_num = parseInt(class_name.replace('headline-text-','')) + 1;
 
-		ga('send', 'event', 'Supply chain timeline', 'Story ' + story_num + ' clicked');
+		ga('send', 'event', project_name, 'Story ' + story_num + ' clicked');
 	});
 
 	$('.circle-td a').click(function(e) {
-		console.log( $(e.target) );
-		console.log( $(e.target).parents('.link-container') );
 		var class_name = $(e.target).parents('.link-container').classList()[1];
 		var story_num = parseInt(class_name.replace('link-container-','')) + 1;
 
-		ga('send', 'event', 'Supply chain timeline', 'Story ' + story_num + ' clicked');
+		ga('send', 'event', project_name, 'Story ' + story_num + ' clicked');
 	});
 	
+	hashAction();
+
 // Close events
 }
 

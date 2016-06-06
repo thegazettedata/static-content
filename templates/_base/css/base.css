@@ -9,6 +9,10 @@ a, .button {
 	cursor: pointer;
 }
 
+a:active, a:focus, a:visited {
+	text-decoration: none;
+}
+
 h4, h5 {
 	float: left;
 }
@@ -32,6 +36,23 @@ h4 {
 
 .align-right {
 	text-align: right;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+/* Colors */
+.background-color {
+	background-color: #E67E22;
+}
+
+.grey-color {
+	background-color: #999;
 }
 
 /* Toggle buttons */
@@ -60,7 +81,6 @@ h4 {
 	color: #FFF;
 	text-decoration: none;
 }
-
 
 @media(max-width:650px) {
 	.toggle-view {

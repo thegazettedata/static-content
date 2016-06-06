@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Opioid abuse in eastern Iowa</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+		<link rel="shortcut icon" href="imgs/glogo.png" />
+
+		<!-- Mobile meta tags-->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta http-equiv="cleartype" content="on">
+		<link rel="apple-touch-icon" href="imgs/glogo.png"/>
+
+		<!-- Social meta tags-->
+		<meta property="og:type" content="article"/>
+		<meta property="og:site_name" content="The Gazette"/>
+		<meta property="twitter:site" content="@gazettedotcom">
+		<meta property="twitter:image" content="imgs/glogo.png">
+
+		<!-- INCLUDES -->
+		<!-- Base styles: Libraries -->
+		<link rel="stylesheet" href="css/lib/bootstrap-2.3.2.min.css" />
+		<link rel="stylesheet" href="css/lib/bootstrap-responsive-2.3.2.min.css" />
+		<link rel="stylesheet" href="css/lib/font-awesome-4.2.0.min.css" />
+
+		<!-- Base, custom styles -->
+		<link rel="stylesheet" href="css/hide-show-media-queries.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/styles-01.css" />
+
+		<!-- Load Spin.js -->
+		<script src="js/lib/spin-2.0.1.min.js"></script>
+	</head>
+	<body id="content">
+			<div id="toggle-view-key">
+				<div class="toggle-view">
+					<a id="maps" class="toggle-view-option selected" href="#1-2">
+						Maps
+					</a>
+					<a id="box-chart" class="toggle-view-option" href="#1-1">
+						Box chart
+					</a>
+				</div>
+				
+				<div id="key">
+					<h5>
+						<a href="http://www.cdc.gov/cancer/npcr/uscs/technical_notes/stat_methods/rates.htm" target="_blank">Age-adjusted rate</a> of overdoses
+					</h5>
+					
+					<!-- Boxes get appended here -->
+					<div id="boxes"></div>
+					
+					<div id="key-points">
+						<span class="left">0%</span>
+						<span class="right">30%</span>	
+					</div>
+				</div>
+			<!-- Close toggle view and key -->
+			</div>
+
+			<div id="svgs-container">
+				<img id="gif" class="hide-desktop show-650" alt='Opioid abuse in eastern Iowa' src='imgs/map.gif'>
+			</div>
+
+			<table id="page-1-table" class="table">
+				<thead>
+					<th></th>
+					<th>1999</th>
+					<th>2000</th>
+					<th>2001</th>
+					<th>2002</th>
+					<th>2003</th>
+					<th>2004</th>
+					<th>2005</th>
+					<th>2006</th>
+					<th>2007</th>
+					<th>2008</th>
+					<th>2009</th>
+					<th>2010</th>
+					<th>2011</th>
+					<th>2012</th>
+					<th>2013</th>
+					<th>2014</th>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+		<!-- Spin.js -->
+		<script>
+		var opts = {
+			lines: 13, // The number of lines to draw
+			length: 20, // The length of each line
+			width: 10, // The line thickness
+			radius: 30, // The radius of the inner circle
+			corners: 1, // Corner roundness (0..1)
+			rotate: 0, // The rotation offset
+			direction: 1, // 1: clockwise, -1: counterclockwise
+			color: '#000', // #rgb or #rrggbb or array of colors
+			speed: 1, // Rounds per second
+			trail: 60, // Afterglow percentage
+			shadow: false, // Whether to render a shadow
+			hwaccel: false, // Whether to use hardware acceleration
+			className: 'spinner', // The CSS class to assign to the spinner
+			zIndex: 2e9, // The z-index (defaults to 2000000000)
+			top: '200px', // Top position relative to parent
+			left: '50%' // Left position relative to parent
+		};
+		var target = document.getElementById('content');
+		var spinner = new Spinner(opts);
+		spinner.spin(target);
+		</script>
+	
+		<!-- JS: Libraries -->
+		<script src="js/lib/jquery-1.11.1.min.js"></script>
+		<script src="js/lib/underscore-1.8.3.min.js"></script>
+		<script src="js/lib/backbone-1.2.0.min.js"></script>
+		<script src="js/lib/handlebars-4.0.5.min.js"></script>
+		<script src="js/lib/d3.v3.min.js"></script>
+		<script src="js/lib/d3.queue.v1.min.js"></script>
+		<script src="js/lib/topojson.v1.min.js"></script>
+		<script src="js/lib/pym.min.js"></script>
+
+		<!-- Templates -->
+    <script id="template-state-overdoses" type="text/x-handlebars-template">
+			{{#each this}}
+    		<tr>
+	    		<td>
+	    			<span class="key-text">
+	    				{{@key}}
+	    			</span>
+	    		</td>
+					{{#each this}}
+						<td>
+							<div class="box" style="background-color:{{shade_boxes aar}}"></div>
+						</td>
+					{{/each}}
+				</tr>
+			{{/each}}
+   	</script>
+
+		<!-- Base, custom JS -->
+		<script src="js/base.js"></script>
+		<script src="js/base-handlebars.js"></script>
+		<script src="js/application.js"></script>
+		<script src="js/multiple-pages.js"></script>
+		<script src="js/script-01.js"></script>
+	</body>
+</html>

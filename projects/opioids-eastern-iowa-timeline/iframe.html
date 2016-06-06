@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+		<link rel="shortcut icon" href="imgs/glogo.png" />
+		
+		<!-- Mobile meta tags-->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta http-equiv="cleartype" content="on">
+		<link rel="apple-touch-icon" href="imgs/glogo.png"/>
+		
+		<script src="js/lib/pym.min.js"></script>
+
+		<title>iFrame test</title>
+	</head>
+
+	<body>
+		<div class="right" style="width: 500px; text-align: left;">
+			<h3 style="font-size: 21px; text-align: left;">Heroin's hold in Iowa</h3>
+			<p class="embed-subhead">
+				For the next month, Gazette reporters will be taking an in-depth look at the heroin epidemic in Iowa. The first story focuses on one woman's battle with heroin.
+			</p>
+			<div id="opioids-timeline" class="full-width-mobile"> </div>
+			<script type="text/javascript">
+				var pymParent = new pym.Parent('opioids-timeline','http://files.gazlab.com/content-host/static-content/projects/opioids-eastern-iowa-timeline/index.html#0', {});
+			</script>
+			<p class="embed-subhead" style="font-size: 11px!important;">Woman icon by TukTuk Design. Police icon by Icons8, RU. Pacifier icon by TiRo. Syringe icon by Edward Boatman. All icons from the <a href="https://thenounproject.com/" target="_blank">Noun Project</a>.</p>
+			<script type="text/javascript">// <![CDATA[
+				$(document).ready(function(){$('#summary').hide();$('#summary-container-mobile').hide();});
+			// ]]></script>
+		</div>
+	</body>
+</html>

@@ -64,8 +64,8 @@ module.exports = function (grunt) {
 	
 	// Create new project
     grunt.registerTask('new', [
-        'copy:base',
-        'emptyFiles'
+        'emptyFiles',
+        'copy:base'
     ]);
 
     // Delete a project
