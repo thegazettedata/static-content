@@ -7,3 +7,5 @@ This is an ongoing list of links to static content we've created:
 * 6/6/16 - [Timeline: Heroin's hold in Iowa](http://www.thegazette.com/subject/news/heroins-hold-how-iowans-struggle-x2014-and-sometimes-succeed-x2014-in-overcoming-opioid-addiction-20160605)
 
 * 6/6/16 - [Map multiples and box chart: Drug overdoses increasing across U.S.](http://www.thegazette.com/subject/news/heroins-hold-how-iowans-struggle-x2014-and-sometimes-succeed-x2014-in-overcoming-opioid-addiction-20160605)
+
+* 6/12/16 - [Timeline: Heroin's hold in Iowa](http://www.thegazette.com/subject/news/heroins-hold-for-some-heroin-is-love-at-first-sight-20160612)
