@@ -14,8 +14,8 @@ var data = [
 	},{
 		'chapter': 3,
 		'headline': 'Babies and mothers',
-		'text': 'Story will be posted June 19.',
-		'link': '',
+		'text': "Mothers who battle opioid addiction are hoping their babies don't end of addicted as well.",
+		'link': 'http://www.thegazette.com/subject/news/heroins-hold-for-pregnant-women-battling-opioid-addiction-more-at-stake-than-just-breaking-the-habit-20160619',
 		'icon': '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" enable-background="new 0 0 100 100" xml:space="preserve"><g><path d="M18.436,47.463c0.361-6.929,15.331-11.775,33.435-10.824s32.484,7.337,32.123,14.266   C83.63,57.832,68.66,62.68,50.557,61.729C32.453,60.776,18.071,54.392,18.436,47.463z"/><path fill-rule="evenodd" clip-rule="evenodd" d="M49.766,0.185c8.421-1.034,16.653,9.572,18.384,23.69   c1.734,14.119-3.688,26.403-12.108,27.438c-8.42,1.034-16.651-9.575-18.384-23.693C35.924,13.504,41.346,1.219,49.766,0.185z    M50.949,8.016c6.049-0.744,11.96,6.877,13.204,17.019C65.398,35.177,61.505,44,55.457,44.741   c-6.051,0.743-11.961-6.877-13.206-17.017C41.006,17.582,44.899,8.759,50.949,8.016z"/><path d="M59.578,60.271c-1.267,6.677,1.714,7.995,2.874,9.059c5.954,5.459,7.809,14.233,3.971,21.451   c-4.583,8.622-15.554,11.756-24.502,6.996c-8.949-4.76-12.487-15.605-7.905-24.229c4.587-8.62,10.947-5.331,10.723-16.352   C44.738,57.196,60.848,53.595,59.578,60.271z"/></g></svg>'
 	},{
 		'chapter': 4,

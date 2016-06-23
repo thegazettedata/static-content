@@ -113,6 +113,8 @@ function hideStories() {
 
 	// Determine the date so we can hide stories
 	var now = moment();
+	console.log(now);
+	console.log(now.isAfter('2016-06-19'))
 
 	if ( now.isSameOrAfter('2016-06-12') ) {
 		stories_to_hide = [2, 3];
@@ -121,14 +123,18 @@ function hideStories() {
     	'height': '400px',
     	'margin-top': '201px'
 		});
-	} else if ( now.isAfter('2016-06-19') ) {
+	}
+
+	if ( now.isAfter('2016-06-19') ) {
 		stories_to_hide = [3];
 
 		$('.timeline-bar.grey-color').css({
     	'height': '200px',
     	'margin-top': '401px'
 		});
-	} else if ( now.isAfter('2016-06-26') ) {
+	}
+
+	if ( now.isAfter('2016-06-26') ) {
 		stories_to_hide = [];
 
 		$('.timeline-bar.grey-color').hide();
