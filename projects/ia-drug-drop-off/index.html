@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Drug drop off locations in Iowa | The Gazette</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+		<link rel="stylesheet" rel="shortcut icon" href="http://www.thegazette.com/images/glogo.png" />
+
+		<!-- Mobile meta tags-->
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta http-equiv="cleartype" content="on">
+		<link rel="stylesheet" rel="apple-touch-icon" href="http://www.thegazette.com/images/glogo.png"/>
+
+		<!-- Social meta tags-->
+		<meta property="og:type" content="article"/>
+		<meta property="og:site_name" content="The Gazette"/>
+		<meta property="twitter:site" content="@gazettedotcom">
+		<meta property="twitter:image" content="http://www.thegazette.com/images/glogo.png">
+
+		<!-- INCLUDES -->
+		<!-- Base styles: Libraries -->
+		<link rel="stylesheet" href="css/lib/bootstrap-2.3.2.min.css" />
+		<link rel="stylesheet" href="css/lib/bootstrap-responsive-2.3.2.min.css" />
+		<link rel="stylesheet" href="css/lib/font-awesome-4.2.0.min.css" />
+		<link rel="stylesheet" href="css/lib/leaflet-0.7.7.css" />
+		<link rel="stylesheet" href="css/lib/L.Control.Locate.min.css" />
+
+		<!-- Base, custom styles -->
+		<link rel="stylesheet" href="css/hide-show-media-queries.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/base-map.css" />
+		<link rel="stylesheet" href="css/style.css" />
+
+		<!-- Load Spin.js and jQuery -->
+		<script src="js/lib/spin-2.0.1.min.js"></script>
+		<script src="js/lib/jquery-1.11.1.min.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logos">
+				<a href="http://www.thegazette.com">
+					<img class="logo-gazette hide-mobile" src="http://www.thegazette.com/Includes/data/imgs/gazette-logo-inverse.png">
+					<img class="logo-gazette-mobile hide-desktop show-mobile-inline" src="http://www.thegazette.com/Includes/data/imgs/gazette-g.png">
+				</a>
+				<a href="http://www.thegazette.com/data">
+					<img class="data-center hide-350 logo-gazette spaced" src="http://www.thegazette.com/Includes/data/imgs/datacenter-logo_1024.png">
+					<img class="data-center hide-desktop show-350-inline logo-gazette spaced" src="http://www.thegazette.com/Includes/data/imgs/datacenter_nologo.png">
+				</a>
+			</div>
+
+			<!-- Share-->
+			<div id="share">
+				<ul>
+					<li id="share-first-li"><a title="Tweet" class="share-action twitter" href="javascript:socialShare('Twitter')"><div class="fa fa-twitter fa-2x icons-share"></div></a></li>
+					<li id="share-next-li"><a title="Share on Facebook" class="share-action facebook" href="javascript:socialShare('Facebook')"><div class="fa fa-facebook fa-2x icons-share"></div></a></li>
+					<li class="hide-900 link" id="share-first-li"><a title="Sports" class="share-action" href="http://thegazette.com/sports">Sports</a></li>
+					<li class="hide-900 link" id="share-first-li">
+						<a title="Tweet" class="share-action twitter" href="http://thegazette.com/news">News</a>
+					</li>
+				</ul>
+			<!-- Closes share-->
+			</div>
+			<script>
+			// Set social buttons
+			function socialShare(network) {
+				var winWidth = 520;
+				var winHeight = 350;
+				var winTop = (screen.height / 2) - (winHeight / 2);
+				var winLeft = (screen.width / 2) - (winWidth / 2);
+				var url = encodeURIComponent(window.location.href);
+				var title = $('#body-content h1').text();
+				if (title === "") {
+				    title = $('#wrapper h1').text();
+				}
+				var descr = " Share popup";
+				var image = "https://gadatabases.herokuapp.com/assets/datacenter-icon-0d0490109aa013b7d4c0304135eaccd4cf87b950664bc98b0a83dc26e83a9a3f.png";
+
+				if (network === 'Facebook') {
+					var url_start = 'http://www.facebook.com/sharer.php?s=100';
+				} else if (network === 'Twitter') {
+					var url_start = 'https://twitter.com/share?url=' + url + '&text=Check this out: ' + title + ' - &via=gazettedotcom';
+				}
+				window.open(url_start + '&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url + '&p[images][0]=' + image, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+			}
+
+			// Fire it up
+			$(document).ready(function() {
+					// Social buttons
+					var twitter = '<a title="Tweet" class="share-action twitter" href="javascript:socialShare(' + "'Twitter'" + ')"><div class="fa fa-twitter fa-2x icons-share"></div></a>';
+					var facebook = '<a title="Share on Facebook" class="share-action facebook" href="javascript:socialShare(' + "'Facebook'" + ')"><div class="fa fa-facebook fa-2x icons-share"></div></a>';
+					$('#share-first-li').html(twitter);
+					$('#share-next-li').html(facebook);
+			});
+			</script>
+		<!-- Closes header-->
+		</div>
+
+		<div id="body-content">
+			<div id="content-box">
+				<h1>Find a drug drop-off site near you</h1>
+
+				<div id="map-container">
+					<div id="map"></div>
+				</div>
+
+				<div id="results-container">
+					<div id="initial-container">
+						<h2>Click "Look up your address" to find drug drop-off sites near you.</h1>
+					</div>
+
+					<div id="drop-off-sites-container">
+						<h2>Your nearest drug drop-off sites</h1>
+						<p class="note">
+							Every prescription drug drop-off site in Iowa is listed below. They are ordered by how close they are to your address.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="footer-base" style="display: block;">
+			All content copyright 2016, Gazette Communications, 500 Third Avenue SE, Cedar Rapids, Iowa 52401. Read <a href="http://thegazette.com/about-us/" target="_blank">more about us</a> or <a href="mailto:customercare@thegazette.com">e-mail us</a>.
+    </div>
+
+		<!-- Spin.js -->
+		<script>
+		var opts = {
+			lines: 13, // The number of lines to draw
+			length: 20, // The length of each line
+			width: 10, // The line thickness
+			radius: 30, // The radius of the inner circle
+			corners: 1, // Corner roundness (0..1)
+			rotate: 0, // The rotation offset
+			direction: 1, // 1: clockwise, -1: counterclockwise
+			color: '#000', // #rgb or #rrggbb or array of colors
+			speed: 1, // Rounds per second
+			trail: 60, // Afterglow percentage
+			shadow: false, // Whether to render a shadow
+			hwaccel: false, // Whether to use hardware acceleration
+			className: 'spinner', // The CSS class to assign to the spinner
+			zIndex: 2e9, // The z-index (defaults to 2000000000)
+			top: '200px', // Top position relative to parent
+			left: '50%' // Left position relative to parent
+		};
+		var target = document.getElementById('content');
+		var spinner = new Spinner(opts);
+		spinner.spin(target);
+		</script>
+	
+		<!-- JS: Libraries -->
+		<script src="js/lib/underscore-1.8.3.min.js"></script>
+		<script src="js/lib/handlebars-4.0.5.min.js"></script>
+		<script src="js/lib/pym.min.js"></script>
+		<script src="js/lib/moment-2.13.min.js"></script>
+		<script src="js/lib/leaflet-0.7.7.js"></script>
+		<script src="js/lib/tile.stamen.js"></script>
+		<script src="js/lib/L.Control.Locate.js"></script>
+		<script src="js/lib/leaflet-knn.min.js"></script>
+		
+		<!-- Templates -->
+    <script id="results-template" type="text/x-handlebars-template">
+			<table class="table table-striped">
+				<thead>
+					<th class="name-head">Name</th>
+					<th class="address-head">Address</th>
+					<th class="city-head">City</th>
+					<th class="zip-head">
+						Zip <span class="hide-mobile">Code</span>
+					</th>
+					<th class="icon-head">Actions</th>
+				</thead>
+				<tbody>
+					{{#each this}}
+						<tr>
+							<td>{{layer.feature.properties.Name}}</td>
+							<td>{{layer.feature.properties.Address}}</td>
+							<td>{{layer.feature.properties.City}}</td>
+							<td>{{layer.feature.properties.Zip}}</td>
+							<td class="icon">
+								<i class="fa fa-map-marker" data-latlng="{{layer.feature.geometry.coordinates}}" aria-hidden="true"></i>
+								<a href="https://www.google.com/maps?daddr={{coordinates layer.feature.geometry.coordinates}}&ll" target="_blank">
+									<i class="fa fa-compass" aria-hidden="true"></i>
+								</a>
+							</td>
+						</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</script>
+
+		<!-- Base, custom JS -->
+		<script src="data/locations.geojson"></script>
+		<script src="js/base.js"></script>
+		<script src="js/base-map.js"></script>
+		<script src="js/script.js"></script>
+		<script>
+			var project_name = 'Iowa drug drop off locations';
+		</script>
+	</body>
+</html>
