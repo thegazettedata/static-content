@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Title goes here</title>
+		<title>Iowa Boards and Commissions</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 		<link rel="shortcut icon" href="imgs/glogo.png" />
@@ -37,43 +37,60 @@
 	</head>
 	<body>
 		<div id="content">
+			<table id="about-table" class="table">
+				<tr>
+					<td>
+						<div id="number-total-container-1" class="number-total-container">
+							<div class="number">14</div><div class="total header">commissions</div>
+						</div>
+					</td>
+					<td>
+						<div id="number-total-container-2" class="number-total-container">
+							<div class="number">78</div><div class="total header">members</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<table id="political-table" class="table">
+				<thead>
+					<tr>
+						<th id="Rep-th">Republicans</th>
+						<th id="Dem-th">Democrats</th>
+						<th id="Vacant-th">Vacant</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="Rep-td">
+							<h5 class="hide-desktop show-700">Republicans</h5>
+						</td>
+						<td id="Dem-td">
+							<h5 class="hide-desktop show-700">Democrats</h5>
+						</td>
+						<td id="Vacant-td">
+							<h5 class="hide-desktop show-700">Vacant</h5>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="key">
+				<div id="border-text-container">
+					<div class="text">Branstad's appointments have <strong>circles</strong> around them.</div>
+					<div class="border fa fa-user Rep"></div>
+				</div>
+			</div>
 		</div>
-
-		<!-- Spin.js -->
-		<script>
-		var opts = {
-			lines: 13, // The number of lines to draw
-			length: 20, // The length of each line
-			width: 10, // The line thickness
-			radius: 30, // The radius of the inner circle
-			corners: 1, // Corner roundness (0..1)
-			rotate: 0, // The rotation offset
-			direction: 1, // 1: clockwise, -1: counterclockwise
-			color: '#000', // #rgb or #rrggbb or array of colors
-			speed: 1, // Rounds per second
-			trail: 60, // Afterglow percentage
-			shadow: false, // Whether to render a shadow
-			hwaccel: false, // Whether to use hardware acceleration
-			className: 'spinner', // The CSS class to assign to the spinner
-			zIndex: 2e9, // The z-index (defaults to 2000000000)
-			top: '200px', // Top position relative to parent
-			left: '50%' // Left position relative to parent
-		};
-		var target = document.getElementById('content');
-		var spinner = new Spinner(opts);
-		spinner.spin(target);
-		</script>
 	
 		<!-- JS: Libraries -->
 		<script src="js/lib/jquery-1.11.1.min.js"></script>
 		<script src="js/lib/underscore-1.8.3.min.js"></script>
-		<script src="js/lib/backbone-1.2.0.min.js"></script>
-		<script src="js/lib/handlebars-4.0.5.min.js"></script>
-		<script src="js/lib/pym.min.js"></script>
 		
 		<!-- Base, custom JS -->
 		<script src="json/data.json"></script>
 		<script src="js/base.js"></script>
 		<script src="js/script.js"></script>
+
+		<!-- Pym -->
+		<script src="js/lib/pym.min.js"></script>
 	</body>
 </html>
