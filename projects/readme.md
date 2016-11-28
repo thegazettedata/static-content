@@ -11,3 +11,5 @@ This is an ongoing list of links to static content we've created:
 * 6/12/16 - [Timeline: Heroin's hold in Iowa](http://www.thegazette.com/subject/news/heroins-hold-for-some-heroin-is-love-at-first-sight-20160612)
 
 * 6/26/16 - [Map: Find a drug drop-off site near you](https://www.fusionfarm.com/gaz-content/ia-drug-drop-off/index.html)
+
+* 11/27/16 - [Chart: Branstad names no Democrats to pick Iowa judges](http://www.thegazette.com/subject/news/politics/election/iowa-statehouse/branstad-names-no-democrats-to-pick-iowa-judges-20161127)
